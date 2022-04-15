@@ -57,16 +57,11 @@ namespace Scuola
 
                 return user;
             }
-             catch(Exception ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine($"{ ex}");
+                Console.WriteLine($"Problemi con DB. Dettagli: \n {ex.Message}");
                 return user;
             }
-            //catch (SqlException ex)
-            //{
-            //    Console.WriteLine($"Problemi con DB. Dettagli: \n {ex.Message}");
-            //    return user;
-            //}
             finally
             {
                 if (connection != null)
